@@ -17,13 +17,15 @@ Slide to Captcha is a new way to look at CAPTCHA. A user simply slides to unlock
     <script src="path/to/slide-to-captcha.min.js" type="text/javascript"></script>
     
 ####Calling Slide to CAPTCHA####
-$('#identifier-of-slidewrapper').slideToCAPTCHA();
+    $('#identifier-of-slidewrapper').slideToCAPTCHA();
+    
 ####Options####
-    Option             Default
-    handle             ".handle"  // Class of handle inside #identifier-of-slidewrapper
-    cursor             "move"     // The cursor your mouse will use when hovering over handle
-    direction          "x"        // Can be x or y. Not done with y slide yet.
-    customValidation   false      // If you write your own validation, choose true
+    Option              Default
+    -----------------------------------------
+    handle:             ".handle"  // Class of handle inside #identifier-of-slidewrapper
+    cursor:             "move"     // The cursor your mouse will use when hovering over handle
+    direction:          "x"        // Can be x or y. Not done with y slide yet.
+    customValidation:   false      // If you write your own validation, choose true
 
 ###To Do###
 * Test in older browsers
