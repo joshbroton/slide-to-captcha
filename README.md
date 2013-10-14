@@ -4,9 +4,9 @@ Slide to Captcha
 
 CAPTCHAs suck. Math problems are exclusionary. Color-based CAPTCHAs stop color-blind people from using your site. 
 
-[A REALLY basic example](http://joshbroton.com/projects/slide-to-captcha)
-
 Slide to Captcha is a new way to look at CAPTCHA. A user simply slides to unlock the submit functionality of your form (an interaction metaphor they are used to already).
+
+[A REALLY basic example](http://joshbroton.com/projects/slide-to-captcha)
 
 ##Slide to CAPTCHA Basics##
 
@@ -34,4 +34,4 @@ Slide to Captcha is a new way to look at CAPTCHA. A user simply slides to unlock
 
 ###Done###
 * Basic horizontal functionality
-* Tested in Chrome 30, 32 and Firefox 24
+* Tested in Chrome 30, 32, IE 8/9/10/11 (some styles don't work in 8/9), and Firefox 24
