@@ -1,0 +1,23 @@
+/*
+Errno::ENOENT: No such file or directory - scss/slide-to-captcha.scss
+
+Backtrace:
+C:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.3.0.alpha.376/lib/sass/plugin/compiler.rb:341:in `read'
+C:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.3.0.alpha.376/lib/sass/plugin/compiler.rb:341:in `update_stylesheet'
+C:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.3.0.alpha.376/lib/sass/plugin/compiler.rb:192:in `block in update_stylesheets'
+C:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.3.0.alpha.376/lib/sass/plugin/compiler.rb:189:in `each'
+C:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.3.0.alpha.376/lib/sass/plugin/compiler.rb:189:in `update_stylesheets'
+C:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.3.0.alpha.376/lib/sass/plugin/compiler.rb:224:in `watch'
+C:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.3.0.alpha.376/lib/sass/plugin.rb:109:in `method_missing'
+C:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.3.0.alpha.376/lib/sass/exec.rb:504:in `watch_or_update'
+C:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.3.0.alpha.376/lib/sass/exec.rb:346:in `process_result'
+C:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.3.0.alpha.376/lib/sass/exec.rb:43:in `parse'
+C:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.3.0.alpha.376/lib/sass/exec.rb:22:in `parse!'
+C:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.3.0.alpha.376/bin/sass:9:in `<top (required)>'
+C:/Ruby200/bin/sass:23:in `load'
+C:/Ruby200/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Errno::ENOENT: No such file or directory - scss/slide-to-captcha.scss"; }

@@ -73,7 +73,7 @@
   background-color: rgba(221, 221, 221, 0.5); }
 
 .slide-to-captcha.valid:after {
-  content: "You're human!";
+  content: attr(data-content);
   display: block;
   color: rgba(0, 0, 0, 0.6); }
 

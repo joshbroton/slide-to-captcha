@@ -4,7 +4,8 @@
             handle: '.handle',
             cursor: 'move',
             direction: 'x', //x or y
-            customValidation: false
+            customValidation: false,
+            completedText: 'You\'re human!'
         }, options);
 
         var $handle = this.find(options.handle),
@@ -74,6 +75,8 @@
             slideOff();
             $formEl.attr('data-valid', 'true');
             $slide.addClass('valid');
+            $('.slide-to-captcha').attr('data-content', options.completedText);
+
 
         }
 

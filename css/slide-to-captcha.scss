@@ -58,7 +58,7 @@
 }
 
     .slide-to-captcha.valid:after {
-        content: "You're human!";
+        content: attr(data-content);
         display: block;
         color: rgba(0,0,0,.6);
     }
