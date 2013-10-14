@@ -34,3 +34,4 @@ Slide to Captcha is a new way to look at CAPTCHA. A user simply slides to unlock
 
 ###Done###
 * Basic horizontal functionality
+* Tested in Chrome
