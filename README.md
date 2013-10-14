@@ -1,4 +1,4 @@
-Slide to Captcha
+Slide to CAPTCHA
 ================
 ###A unique way for your users to prove they're human!###
 
@@ -27,11 +27,11 @@ Slide to Captcha is a new way to look at CAPTCHA. A user simply slides to unlock
     direction:          "x"        // Can be x or y. Not done with y slide yet.
     customValidation:   false      // If you write your own validation, choose true
 
-###To Do###
+##To Do##
 * Test in older browsers
 * More options
 * Vertical slide functionality
 
-###Done###
+##Done##
 * Basic horizontal functionality
 * Tested in Chrome 30, 32, IE 8/9/10/11 (some styles don't work in 8/9), and Firefox 24
