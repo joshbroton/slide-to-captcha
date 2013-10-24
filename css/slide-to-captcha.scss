@@ -2,7 +2,7 @@
 
 .slide-to-captcha {
     position: relative;
-    width: 150px;
+    width: 75px;
     height: 30px;
     background-color: #ddd;
     background-color: rgba(221,221,221,1);
@@ -58,9 +58,11 @@
 }
 
     .slide-to-captcha.valid:after {
+        position: relative;
         content: attr(data-content);
         display: block;
         color: rgba(0,0,0,.6);
+        z-index: 1;
     }
 
     .slide-to-captcha.valid .slide-to-captcha-handle {
