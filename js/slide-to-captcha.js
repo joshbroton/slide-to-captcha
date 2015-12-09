@@ -49,7 +49,8 @@
             //}
             slideXPos = $slide.offset().left + ((slideOWidth - slideWidth) / 2);
 
-            $activeHandle.on('mousemove', function(e){ slideMove(e); })
+            //modified element trigger for more sensibility (usability tip)
+            $formEl.on('mousemove', function(e){ slideMove(e); })
                 .on('mouseup', function(e){ slideOff(); });
 
             e.preventDefault();
@@ -58,6 +59,7 @@
         function slideMove(e) {
             var handleXPos = e.pageX + xPos - handleOWidth;
             if(handleXPos > slideXPos && handleXPos < slideXPos + slideWidth - handleOWidth) {
+
                 if ($handle.hasClass('active-handle')) {
                     $('.active-handle').offset({left: handleXPos});
                 }
@@ -65,7 +67,7 @@
                 if(handleXPos <= slideXPos === false) {
                     sliderComplete();
                 }
-                $activeHandle.mouseup();
+                $formEl.mouseup();
             }
         }
 
