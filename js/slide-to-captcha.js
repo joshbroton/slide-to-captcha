@@ -17,12 +17,13 @@
             slideWidth,
             slideOWidth,
             $activeHandle,
+            timer,
             $formEl = $slide.parents('form');
 
         startSlider();
 
         $handle.css('cursor', options.cursor)
-            .on('mousedown', function(e){ slideOn(e); });
+            .on('mousedown touchstart', function(e){ slideOn(e); });
 
         function startSlider() {
             $formEl.attr('data-valid', 'false');
@@ -33,31 +34,72 @@
 
             $slide.addClass('slide-to-captcha');
             $handle.addClass('slide-to-captcha-handle');
-            
+
             handleOWidth = $handle.outerWidth();
             slideWidth = $slide.width();
             slideOWidth = $slide.outerWidth();
         }
 
         function slideOn(e) {
+            //bind events 
+            //clear timer
+            clearTimeout(timer);
+            //set timer
+            timer = setTimeout(function () {
+
+                //determine where to look for pageX by the event type
+                var pageX = (e  .type.toLowerCase() === 'mousedown')
+                    ? e.pageX
+                    : e.originalEvent.touches[0].pageX;
+
+
+            }, 50);
+
             $activeHandle = $handle.addClass('active-handle');
 
-            xPos = $handle.offset().left + handleOWidth - e.pageX;
+            if (e.type.toLowerCase() === 'touchstart'){
+                xPos = $handle.offset().left + handleOWidth - e.originalEvent.touches[0].pageX;
+            } else {
+                xPos = $handle.offset().left + handleOWidth - e.pageX;
+            }
 
             //if(options.direction === 'y') {
             //    yPos = $handle.offset().top + handleHeight = e.pageY;
             //}
             slideXPos = $slide.offset().left + ((slideOWidth - slideWidth) / 2);
 
-            $activeHandle.on('mousemove', function(e){ slideMove(e); })
-                .on('mouseup', function(e){ slideOff(); });
+            //modified element trigger for more sensibility (usability tip)
+            $formEl.on('mousemove touchmove', function(e){ slideMove(e); })
+                .on('mouseup touchend', function(e){ slideOff(); });
 
             e.preventDefault();
         }
 
         function slideMove(e) {
-            var handleXPos = e.pageX + xPos - handleOWidth;
+            //bind events 
+            //clear timer
+            clearTimeout(timer);
+            //set timer
+            timer = setTimeout(function () {
+
+                //determine where to look for pageX by the event type
+                var pageX = (e  .type.toLowerCase() === 'mousemove')
+                    ? e.pageX
+                    : e.originalEvent.touches[0].pageX;
+
+
+            }, 50);
+
+            if (e.type.toLowerCase() === 'touchmove'){
+
+                var handleXPos = (e.originalEvent.touches[0].pageX) + xPos - handleOWidth;
+            } else {
+                var handleXPos = e.pageX + xPos - handleOWidth;
+            }
+
+
             if(handleXPos > slideXPos && handleXPos < slideXPos + slideWidth - handleOWidth) {
+
                 if ($handle.hasClass('active-handle')) {
                     $('.active-handle').offset({left: handleXPos});
                 }
@@ -65,7 +107,7 @@
                 if(handleXPos <= slideXPos === false) {
                     sliderComplete();
                 }
-                $activeHandle.mouseup();
+                $formEl.mouseup();
             }
         }
 
@@ -79,7 +121,6 @@
 
 
         }
-
         function slideOff() {
             $activeHandle.removeClass('active-handle');
         }
